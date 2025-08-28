@@ -18,14 +18,14 @@ const projectsData = [
     title: 'SQL – Data Manipulation & DDL/DML/TCL',
     description: 'Implemented queries for database creation, insertion, update, transaction control (rollback/commit), and data retrieval. Gained hands-on experience with SQL fundamentals.',
     tags: ['SQL', 'Database'],
-    image: '/images/sql.jpg',
+    image: 'https://picsum.photos/400/250',
     imageHint: 'server database',
   },
   {
     title: 'EDA on Student Mental Health Dataset',
     description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
     tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
-    image: '/images/analysis.jpg',
+    image: 'https://picsum.photos/400/250',
     imageHint: 'health chart',
   },
 ];
@@ -41,19 +41,19 @@ export default function Projects() {
     <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container px-4 md:px-6">
         <SectionTitle>Projects</SectionTitle>
-        <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project, index) => (
             <Card key={index} className="flex flex-col overflow-hidden">
               <div className="relative">
                 {project.link ? (
-                  <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                   <Link href={project.link} target="_blank" rel="noopener noreferrer">
                     <img
-                        src={project.image}
-                        alt={project.title}
-                        width={400}
-                        height={250}
-                        className="w-full object-cover aspect-[16/10] cursor-pointer"
-                        data-ai-hint={project.imageHint}
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={250}
+                      className="w-full object-cover aspect-[16/10] cursor-pointer"
+                      data-ai-hint={project.imageHint}
                     />
                   </Link>
                 ) : (
