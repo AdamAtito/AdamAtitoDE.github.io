@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -24,6 +24,11 @@ export default function Hero() {
               <Button asChild size="lg">
                 <Link href="#contact">
                   <Mail className="mr-2 h-4 w-4" /> Get in Touch
+                </Link>
+              </Button>
+               <Button asChild variant="outline" size="lg">
+                <Link href="https://drive.google.com/file/d/1hL1FSVWln8EF7zi-9VHopYbigLtM6izq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <FileText className="mr-2 h-4 w-4" /> Resume
                 </Link>
               </Button>
               <Button asChild variant="secondary" size="lg">
