@@ -10,19 +10,20 @@ const projectsData = [
     tags: ['C++', 'SFML'],
     image: '/images/mega-man-x.jpg',
     imageHint: 'retro gaming',
+    isLocal: true,
   },
   {
     title: 'SQL – Data Manipulation & DDL/DML/TCL',
     description: 'Implemented queries for database creation, insertion, update, transaction control (rollback/commit), and data retrieval. Gained hands-on experience with SQL fundamentals.',
     tags: ['SQL', 'Database'],
-    image: '/images/sql-database.svg',
+    image: 'https://picsum.photos/400/250',
     imageHint: 'server database',
   },
   {
     title: 'EDA on Student Mental Health Dataset',
     description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
     tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
-    image: '/images/student-mental-health.svg',
+    image: 'https://picsum.photos/400/250',
     imageHint: 'health chart',
   },
 ];
@@ -41,14 +42,25 @@ export default function Projects() {
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {projectsData.map((project, index) => (
             <Card key={index} className="flex flex-col overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={250}
-                className="w-full object-cover aspect-[16/10]"
-                data-ai-hint={project.imageHint}
-              />
+              {project.isLocal ? (
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={250}
+                    className="w-full object-cover aspect-[16/10]"
+                    data-ai-hint={project.imageHint}
+                />
+              ) : (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={250}
+                  className="w-full object-cover aspect-[16/10]"
+                  data-ai-hint={project.imageHint}
+                />
+              )}
               <div className="flex flex-col flex-grow p-6">
                 <CardHeader className="p-0 pb-4">
                   <CardTitle className="font-headline">{project.title}</CardTitle>
