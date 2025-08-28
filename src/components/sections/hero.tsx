@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin } from 'lucide-react';
 import Link from 'next/link';
@@ -34,7 +33,7 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <Image
+          <img
             src="/images/adam-atito-profile.jpg"
             alt="Adam Atito"
             width={600}
