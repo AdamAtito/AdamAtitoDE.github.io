@@ -25,7 +25,7 @@ const projectsData = [
     title: 'EDA on Student Mental Health Dataset',
     description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
     tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
-    image: 'https://picsum.photos/400/250',
+    image: 'https://picsum.photos/400/251',
     imageHint: 'health chart',
   },
 ];
@@ -43,7 +43,7 @@ export default function Projects() {
         <SectionTitle>Projects</SectionTitle>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden">
+            <Card key={index} className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative">
                 {project.link ? (
                    <Link href={project.link} target="_blank" rel="noopener noreferrer">

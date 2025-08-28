@@ -33,7 +33,7 @@ export default function Volunteering() {
         <SectionTitle>Volunteering & Activities</SectionTitle>
         <div className="mx-auto grid max-w-4xl gap-6">
           {volunteeringData.map((item, index) => (
-            <Card key={index} className="w-full">
+            <Card key={index} className="w-full transition-transform duration-300 ease-in-out hover:scale-105">
               <CardHeader className="grid grid-cols-[auto_1fr] items-start gap-4 space-y-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                     <item.icon className="h-6 w-6 text-primary" />

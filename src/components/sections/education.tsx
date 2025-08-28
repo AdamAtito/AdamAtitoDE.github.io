@@ -30,7 +30,7 @@ export default function Education() {
         <SectionTitle>Education</SectionTitle>
         <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           {educationData.map((edu, index) => (
-            <Card key={index}>
+            <Card key={index} className="transition-transform duration-300 ease-in-out hover:scale-105">
               <CardHeader className="flex flex-row items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                   <edu.icon className="h-6 w-6 text-primary" />

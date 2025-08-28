@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const skillsData = {
   "Programming": { icon: Code, skills: ["C++", "Python", "Java"] },
-  "Data": { icon: Database, skills: ["SQL", "Data Processing", "EDA", "NoSQL"] },
+  "Data": { icon: Database, skills: ["SQL", "Data Processing", "EDA", "NoSQL: MongoDB"] },
   "Cloud & Tools": { icon: Cloud, skills: ["Azure", "Git", "GitHub"] },
   "Linux": { icon: Terminal, skills: ["Intermediate", "Terminal", "File System", "Commands"] },
 };
@@ -24,7 +24,7 @@ export default function Skills() {
         <SectionTitle>Technical Skills</SectionTitle>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {Object.entries(skillsData).map(([category, { icon: Icon, skills }]) => (
-            <Card key={category}>
+            <Card key={category} className="transition-transform duration-300 ease-in-out hover:scale-105">
               <CardHeader className="flex flex-row items-center gap-4 pb-2">
                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                     <Icon className="h-6 w-6 text-primary" />
