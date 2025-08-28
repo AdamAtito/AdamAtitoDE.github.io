@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -29,6 +29,11 @@ export default function Hero() {
               <Button asChild variant="secondary" size="lg">
                 <Link href="https://www.linkedin.com/in/adam-atito/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                </Link>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <Link href="https://github.com/AdamAtito" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-4 w-4" /> GitHub
                 </Link>
               </Button>
             </div>

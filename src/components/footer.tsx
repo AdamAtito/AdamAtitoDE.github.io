@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Github } from 'lucide-react';
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -26,6 +26,12 @@ const socialLinks = [
     href: 'https://www.linkedin.com/in/adam-atito/',
     icon: Linkedin,
     text: 'adam-atito',
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/AdamAtito',
+    icon: Github,
+    text: 'AdamAtito',
   },
   {
     name: 'WhatsApp',
