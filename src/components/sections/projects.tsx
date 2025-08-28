@@ -1,0 +1,73 @@
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
+
+const projectsData = [
+  {
+    title: 'Mega Man X Game',
+    description: 'Developed a full 2D platformer game inspired by Mega Man X, including player movement, animation states, collision detection, parallax background, and camera logic. Led a team of 7 students and optimized architecture for scalability.',
+    tags: ['C++', 'SFML'],
+    image: 'https://picsum.photos/400/250',
+    imageHint: 'game platformer',
+  },
+  {
+    title: 'SQL Assignment – Data Manipulation & DDL/DML/TCL',
+    description: 'Implemented queries for database creation, insertion, update, transaction control (rollback/commit), and data retrieval. Gained hands-on experience with SQL fundamentals.',
+    tags: ['SQL', 'Database'],
+    image: 'https://picsum.photos/400/250',
+    imageHint: 'database code',
+  },
+  {
+    title: 'EDA on Student Mental Health Dataset',
+    description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
+    tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
+    image: 'https://picsum.photos/400/250',
+    imageHint: 'data chart',
+  },
+];
+
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+    <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
+      {children}
+    </h2>
+);
+
+export default function Projects() {
+  return (
+    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+      <div className="container px-4 md:px-6">
+        <SectionTitle>Projects</SectionTitle>
+        <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+          {projectsData.map((project, index) => (
+            <Card key={index} className="flex flex-col overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={250}
+                className="w-full object-cover aspect-[16/10]"
+                data-ai-hint={project.imageHint}
+              />
+              <div className="flex flex-col flex-grow p-6">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="font-headline">{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 flex-grow">
+                  <CardDescription>{project.description}</CardDescription>
+                </CardContent>
+                <CardFooter className="p-0 pt-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="outline">{tag}</Badge>
+                    ))}
+                  </div>
+                </CardFooter>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
