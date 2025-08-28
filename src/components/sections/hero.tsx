@@ -14,10 +14,10 @@ export default function Hero() {
                 Adam Atito
               </h1>
               <p className="text-xl text-primary font-medium font-headline">
-                Computer Science Student & Aspiring Data Engineer
+                Computer Science & Aspiring Data Engineer
               </p>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                Ambitious Computer Science student at Ain Shams University, currently enrolled in the DEPI Microsoft Data Engineer program. Passionate about data, security, and applying technical knowledge in real-world projects.
+                Ambitious Computer Science at Ain Shams University, enrolled in the DEPI Microsoft Data Engineer program. Passionate about data, security, and applying technical knowledge in real-world projects.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
