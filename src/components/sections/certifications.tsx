@@ -1,12 +1,14 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
 
 const certificationsData = [
   {
     name: 'Python Developer',
     issuer: 'Sololearn',
     date: 'July 2025',
+    link: 'https://www.sololearn.com/certificates/CC-7MSHDTUH',
   },
 ];
 
@@ -23,17 +25,19 @@ export default function Certifications() {
         <SectionTitle>Certifications</SectionTitle>
         <div className="mx-auto grid max-w-2xl items-start gap-6">
           {certificationsData.map((cert, index) => (
-            <Card key={index}>
-              <CardContent className="p-6 flex items-center gap-4">
-                <Award className="h-8 w-8 text-accent" />
-                <div className="grid gap-1">
-                  <p className="text-lg font-semibold font-headline">{cert.name}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {cert.issuer} &middot; {cert.date}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+             <Link href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="transition-transform duration-300 ease-in-out hover:scale-105">
+                  <CardContent className="p-6 flex items-center gap-4">
+                    <Award className="h-8 w-8 text-accent" />
+                    <div className="grid gap-1">
+                      <p className="text-lg font-semibold font-headline">{cert.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {cert.issuer} &middot; {cert.date}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+            </Link>
           ))}
         </div>
       </div>
