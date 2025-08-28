@@ -35,12 +35,11 @@ export default function Hero() {
             </div>
           </div>
           <Image
-            src="https://picsum.photos/600/600"
+            src="/images/adam-atito-profile.jpg"
             alt="Adam Atito"
             width={600}
             height={600}
             className="mx-auto aspect-square overflow-hidden rounded-full object-cover sm:w-full"
-            data-ai-hint="professional portrait"
           />
         </div>
       </div>
