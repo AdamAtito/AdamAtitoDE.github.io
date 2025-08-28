@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const skillsData = {
   "Programming": { icon: Code, skills: ["C++", "Python"] },
-  "Data": { icon: Database, skills: ["SQL", "Data Processing", "EDA"] },
+  "Data": { icon: Database, skills: ["SQL", "Data Processing", "EDA", "NoSQL: MongoDB"] },
   "Cloud & Tools": { icon: Cloud, skills: ["Azure", "Git", "GitHub"] },
   "Linux": { icon: Terminal, skills: ["Intermediate", "Terminal", "File System", "Commands"] },
 };
