@@ -8,7 +8,7 @@ const projectsData = [
     title: 'Mega Man X Game',
     description: 'Developed a full 2D platformer game inspired by Mega Man X, including player movement, animation states, collision detection, parallax background, and camera logic. Led a team of 7 students and optimized architecture for scalability.',
     tags: ['C++', 'SFML'],
-    image: '/images/mega-man-x.svg',
+    image: '/images/header.jpg',
     imageHint: 'retro gaming',
   },
   {
