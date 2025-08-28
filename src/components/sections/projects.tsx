@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const projectsData = [
   {
@@ -11,6 +12,7 @@ const projectsData = [
     image: '/images/mega-man-x.jpg',
     imageHint: 'retro gaming',
     isLocal: true,
+    link: 'https://github.com/AdamAtito/MegaManX---SFML',
   },
   {
     title: 'SQL – Data Manipulation & DDL/DML/TCL',
@@ -42,25 +44,40 @@ export default function Projects() {
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {projectsData.map((project, index) => (
             <Card key={index} className="flex flex-col overflow-hidden">
-              {project.isLocal ? (
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={250}
-                    className="w-full object-cover aspect-[16/10]"
-                    data-ai-hint={project.imageHint}
-                />
-              ) : (
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={250}
-                  className="w-full object-cover aspect-[16/10]"
-                  data-ai-hint={project.imageHint}
-                />
-              )}
+              <div className="relative">
+                {project.link ? (
+                  <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={250}
+                        className="w-full object-cover aspect-[16/10] cursor-pointer"
+                        data-ai-hint={project.imageHint}
+                    />
+                  </Link>
+                ) : (
+                  project.isLocal ? (
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={250}
+                        className="w-full object-cover aspect-[16/10]"
+                        data-ai-hint={project.imageHint}
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={250}
+                      className="w-full object-cover aspect-[16/10]"
+                      data-ai-hint={project.imageHint}
+                    />
+                  )
+                )}
+              </div>
               <div className="flex flex-col flex-grow p-6">
                 <CardHeader className="p-0 pb-4">
                   <CardTitle className="font-headline">{project.title}</CardTitle>
