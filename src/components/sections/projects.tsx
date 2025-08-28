@@ -15,14 +15,14 @@ const projectsData = [
     title: 'SQL – Data Manipulation & DDL/DML/TCL',
     description: 'Implemented queries for database creation, insertion, update, transaction control (rollback/commit), and data retrieval. Gained hands-on experience with SQL fundamentals.',
     tags: ['SQL', 'Database'],
-    image: 'https://picsum.photos/400/250',
+    image: '/images/sql-database.svg',
     imageHint: 'server database',
   },
   {
     title: 'EDA on Student Mental Health Dataset',
     description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
     tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
-    image: 'https://picsum.photos/400/250',
+    image: '/images/student-mental-health.svg',
     imageHint: 'health chart',
   },
 ];
