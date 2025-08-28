@@ -8,22 +8,22 @@ const projectsData = [
     title: 'Mega Man X Game',
     description: 'Developed a full 2D platformer game inspired by Mega Man X, including player movement, animation states, collision detection, parallax background, and camera logic. Led a team of 7 students and optimized architecture for scalability.',
     tags: ['C++', 'SFML'],
-    image: 'https://picsum.photos/400/250',
-    imageHint: 'game platformer',
+    image: 'https://picsum.photos/400/250?blur=1',
+    imageHint: 'retro gaming',
   },
   {
     title: 'SQL Assignment – Data Manipulation & DDL/DML/TCL',
     description: 'Implemented queries for database creation, insertion, update, transaction control (rollback/commit), and data retrieval. Gained hands-on experience with SQL fundamentals.',
     tags: ['SQL', 'Database'],
-    image: 'https://picsum.photos/400/250',
-    imageHint: 'database code',
+    image: 'https://picsum.photos/400/250?grayscale',
+    imageHint: 'server database',
   },
   {
     title: 'EDA on Student Mental Health Dataset',
     description: 'Performed Exploratory Data Analysis on student mental health data using Python, Pandas, and visualization techniques to uncover insights and patterns.',
     tags: ['Python', 'Pandas', 'EDA', 'Data Visualization'],
-    image: 'https://picsum.photos/400/250',
-    imageHint: 'data chart',
+    image: 'https://picsum.photos/400/250?random=1',
+    imageHint: 'health chart',
   },
 ];
 
