@@ -6,6 +6,7 @@ import Projects from '@/components/sections/projects';
 import Volunteering from '@/components/sections/volunteering';
 import Certifications from '@/components/sections/certifications';
 import Footer from '@/components/footer';
+import ContactFAB from '@/components/contact-fab';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Volunteering />
         <Certifications />
       </main>
+      <ContactFAB />
       <Footer />
     </div>
   );
