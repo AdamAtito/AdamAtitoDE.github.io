@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MessageSquarePlus } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Tooltip,
@@ -40,13 +40,13 @@ export default function ContactFAB() {
             size="icon"
           >
             <Link href="#contact">
-              <MessageSquarePlus className="h-8 w-8" />
+              <Mail className="h-8 w-8" />
               <span className="sr-only">Contact Me</span>
             </Link>
           </Button>
         </TooltipTrigger>
         <TooltipContent side="left">
-          <p>Connect with me!</p>
+          <p>Get in touch!</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
