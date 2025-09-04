@@ -6,6 +6,9 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'Adam Atito | Portfolio',
   description: 'Personal portfolio for Adam Atito, a Computer Science student and aspiring Data Engineer.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
