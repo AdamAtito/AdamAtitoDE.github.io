@@ -28,12 +28,8 @@ export default function ContactFAB() {
     }, 2000);
 
     const interval = setInterval(() => {
-      setTooltipOpen(true);
       setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-
-      setTimeout(() => {
-        setTooltipOpen(false);
-      }, 4000);
+      setTooltipOpen(true);
     }, 5000);
 
     return () => {
