@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
 
 const projectsData = [
   {
@@ -72,8 +72,11 @@ export default function Projects() {
                   </div>
                   {project.link && (
                      <Button asChild variant="ghost" className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                            View Project <ArrowRight className="ml-2 h-4 w-4" />
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                          <span className="group-hover:hidden">View Project</span>
+                          <span className="hidden group-hover:inline">Show me</span>
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:hidden" />
+                          <Github className="ml-2 h-4 w-4 hidden group-hover:inline" />
                         </Link>
                      </Button>
                   )}
