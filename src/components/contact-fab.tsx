@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { Mail, MailOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Tooltip,
@@ -29,10 +29,9 @@ export default function ContactFAB() {
     };
   }, []);
 
-
   return (
     <TooltipProvider>
-      <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
+      <Tooltip open={tooltipOpen}>
         <TooltipTrigger asChild>
           <Button
             asChild
@@ -40,12 +39,12 @@ export default function ContactFAB() {
             size="icon"
           >
             <Link href="#contact">
-              <Mail className="h-8 w-8" />
+              {tooltipOpen ? <MailOpen className="h-8 w-8" /> : <Mail className="h-8 w-8" />}
               <span className="sr-only">Contact Me</span>
             </Link>
           </Button>
         </TooltipTrigger>
-        <TooltipContent side="left">
+        <TooltipContent side="left" onPointerDownOutside={(e) => e.preventDefault()}>
           <p>Get in touch!</p>
         </TooltipContent>
       </Tooltip>
