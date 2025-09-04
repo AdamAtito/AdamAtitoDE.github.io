@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Linkedin, MapPin, Github } from 'lucide-react';
+import { Button } from './ui/button';
 
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -19,61 +20,51 @@ const socialLinks = [
     name: 'Email',
     href: 'mailto:adamatito12@gmail.com',
     icon: Mail,
-    text: 'adamatito12@gmail.com',
   },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/adam-atito/',
     icon: Linkedin,
-    text: 'adam-atito',
   },
   {
     name: 'GitHub',
     href: 'https://github.com/AdamAtito',
     icon: Github,
-    text: 'AdamAtito',
   },
   {
     name: 'WhatsApp',
     href: 'https://wa.me/+201029452432',
     icon: WhatsAppIcon,
-    text: 'WhatsApp',
-  },
-  {
-    name: 'Location',
-    href: '#',
-    icon: MapPin,
-    text: 'Obour, Cairo, Egypt',
   },
 ];
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-secondary">
+    <footer id="contact" className="bg-secondary/50 border-t border-border/50">
       <div className="container mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-y-0">
-          <div className="text-center md:text-left">
-            <h2 className="font-headline text-2xl font-bold">Contact Me</h2>
-            <p className="mt-2 text-muted-foreground">
-              Feel free to reach out. I'm always open to new opportunities and collaborations.
+        <div className="flex flex-col items-center justify-center text-center space-y-8">
+          <div>
+            <h2 className="font-headline text-3xl font-bold">Contact Me</h2>
+            <p className="mt-2 max-w-lg text-muted-foreground">
+              Feel free to reach out. I'm always open to new opportunities, collaborations, and a good tech chat.
             </p>
           </div>
-          <div className="flex flex-col items-center space-y-4 md:items-end">
+          <div className="flex space-x-4">
             {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target={link.name !== 'Location' ? '_blank' : undefined}
-                rel={link.name !== 'Location' ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <link.icon className="h-5 w-5" />
-                <span>{link.text}</span>
-              </a>
+               <Button asChild key={link.name} variant="outline" size="icon" className="rounded-full h-12 w-12 transition-transform duration-300 hover:scale-110 hover:bg-primary/20 hover:border-primary">
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                  >
+                    <link.icon className="h-6 w-6" />
+                  </a>
+               </Button>
             ))}
           </div>
         </div>
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-12 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Adam Atito. All Rights Reserved.</p>
         </div>
       </div>

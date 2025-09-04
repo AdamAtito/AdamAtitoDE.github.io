@@ -3,6 +3,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button } from '../ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const projectsData = [
   {
@@ -43,40 +45,17 @@ export default function Projects() {
         <SectionTitle>Projects</SectionTitle>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
-              <div className="relative">
-                {project.link ? (
-                   <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      width={400}
-                      height={250}
-                      className="w-full object-cover aspect-[16/10] cursor-pointer"
-                      data-ai-hint={project.imageHint}
-                    />
-                  </Link>
-                ) : (
-                  project.isLocal ? (
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        width={400}
-                        height={250}
-                        className="w-full object-cover aspect-[16/10]"
-                        data-ai-hint={project.imageHint}
-                    />
-                  ) : (
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={400}
-                      height={250}
-                      className="w-full object-cover aspect-[16/10]"
-                      data-ai-hint={project.imageHint}
-                    />
-                  )
-                )}
+            <Card key={index} className="group flex flex-col overflow-hidden bg-background border border-border/50 hover:border-primary/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-2">
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={250}
+                  className="w-full object-cover aspect-[16/10] transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  data-ai-hint={project.imageHint}
+                />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="flex flex-col flex-grow p-6">
                 <CardHeader className="p-0 pb-4">
@@ -85,12 +64,19 @@ export default function Projects() {
                 <CardContent className="p-0 flex-grow">
                   <CardDescription>{project.description}</CardDescription>
                 </CardContent>
-                <CardFooter className="p-0 pt-4">
-                  <div className="flex flex-wrap gap-2">
+                <CardFooter className="p-0 pt-4 flex-col items-start">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline">{tag}</Badge>
+                      <Badge key={tag} variant="secondary">{tag}</Badge>
                     ))}
                   </div>
+                  {project.link && (
+                     <Button asChild variant="ghost" className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                            View Project <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                     </Button>
+                  )}
                 </CardFooter>
               </div>
             </Card>

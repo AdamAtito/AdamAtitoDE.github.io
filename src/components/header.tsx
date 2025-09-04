@@ -20,11 +20,11 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Code2 className="h-6 w-6 text-primary" />
+            <Code2 className="h-6 w-6 text-primary glow" />
             <span className="font-bold font-headline sm:inline-block">
               Adam Atito
             </span>
@@ -53,9 +53,9 @@ export default function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="pr-0">
+            <SheetContent side="left" className="pr-0 bg-background/95">
               <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                <Code2 className="h-6 w-6 text-primary" />
+                <Code2 className="h-6 w-6 text-primary glow" />
                 <span className="font-bold font-headline sm:inline-block">
                   Adam Atito
                 </span>
