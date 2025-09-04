@@ -23,13 +23,14 @@ export default function ContactFAB() {
   const [messageIndex, setMessageIndex] = useState(0);
 
   useEffect(() => {
+    // Show the tooltip after a short delay on page load
     const initialTimeout = setTimeout(() => {
       setTooltipOpen(true);
     }, 2000);
 
+    // Change the message every 5 seconds
     const interval = setInterval(() => {
       setMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-      setTooltipOpen(true);
     }, 5000);
 
     return () => {
@@ -50,7 +51,6 @@ export default function ContactFAB() {
               if (window.location.hash !== '#contact') {
                 e.preventDefault();
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                // Also update the URL hash
                 history.pushState(null, '', '#contact');
               }
             }}
