@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MessageSquarePlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,13 +12,31 @@ import {
 } from '@/components/ui/tooltip';
 
 export default function ContactFAB() {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  useEffect(() => {
+    const initialTimeout = setTimeout(() => {
+      setTooltipOpen(true);
+    }, 2000);
+
+    const interval = setInterval(() => {
+      setTooltipOpen((open) => !open);
+    }, 5000);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
+
   return (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
         <TooltipTrigger asChild>
           <Button
             asChild
-            className="fixed bottom-8 right-8 h-16 w-16 rounded-full shadow-lg"
+            className="fixed bottom-8 right-8 h-16 w-16 rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 ease-in-out hover:scale-110"
             size="icon"
           >
             <Link href="#contact">
